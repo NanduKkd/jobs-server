@@ -1,0 +1,23 @@
+{
+  "name": "jobs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "test",
+	"start": "nodemon start"
+  },
+  "keywords": [
+    "job",
+    "jobs",
+    "work",
+    "money"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "mongoose": "^7.0.2"
+  }
+}
