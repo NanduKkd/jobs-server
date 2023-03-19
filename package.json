@@ -1,17 +1,18 @@
 {
-  "name": "jobs",
+  "name": "jobs-server",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "test",
-	"start": "nodemon start"
+	"start": "nodemon index.js"
   },
   "keywords": [
     "job",
     "jobs",
     "work",
-    "money"
+    "money",
+	"server"
   ],
   "author": "",
   "license": "ISC",
