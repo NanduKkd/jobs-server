@@ -32,6 +32,7 @@ router.ws('/', async(ws, req) => {
 				}
 				break;
 			case 'message_seen':
+				console.log(msg.chat, ws.user)
 				await messageModel.updateMany({from: msg.chat, to: ws.user}, {$set: {seenAt: new Date()}});
 				if(connectedUsers[msg.chat]) {
 					connectedUsers[msg.chat].send(JSON.stringify({type: 'seen', chat: ws.user}))

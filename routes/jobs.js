@@ -3,7 +3,7 @@ const jobModel = require('../models/job')
 
 function shortenText(txt) {
 	const maxLength = 200;
-	txt = txt.replace(/\n+/g, '')
+	txt = txt.replace(/\n+/g, ' ')
 	return txt.substring(0, maxLength)+(txt.length>maxLength?'...':'')
 }
 
