@@ -27,6 +27,7 @@ router.get("/:person", async(req, res) => {
 					else: 0,
 				}}},
 			}},
+			{$sort: {createdAt: -1}},
 			{$lookup: {from: 'users', localField: '_id', foreignField: '_id', as: 'otherPerson'}},
 			{$set: {otherPerson: {$first: '$otherPerson'}}},
 			{$project: {
