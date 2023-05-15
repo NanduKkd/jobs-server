@@ -2,7 +2,6 @@ const express = require('express')
 const mongoose = require('mongoose')
 const ws = require('express-ws')
 const cookieParser = require('cookie-parser')
-const bodyParser = require('body-parser')
 require('dotenv').config()
 
 mongoose.connect('mongodb://127.0.0.1:27017/'+process.env.DATABASE)
@@ -32,7 +31,7 @@ app.use((req, res, next) => {
 })
 
 app.use(cookieParser())
-app.use(bodyParser.json())
+app.use(express.json({ limit: '50mb' }))
 ws(app)
 
 app.use('/api', require('./routes'))

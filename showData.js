@@ -3,6 +3,8 @@ require('dotenv').config()
 const userModel = require('./models/user')
 const jobModel = require('./models/job')
 const messageModel = require('./models/message')
+const courseModel = require('./models/course')
+const videoModel = require('./models/video')
 
 const readline = require("readline");
 const rl = readline.createInterface({
@@ -17,7 +19,7 @@ database.on('error', err => {
 	console.error(err);
 })
 database.once('connected', () => {
-	rl.question("We have collections:\n1. Users\n2. Jobs\n3. Messages\nPick an option (1,2,3): ", ans => {
+	rl.question("We have collections:\n1. Users\n2. Jobs\n3. Messages\n4. Courses\n5. Videos\nPick an option (1,2,3,4,5): ", ans => {
 		let model;
 		switch(ans) {
 			case '1':
@@ -28,6 +30,12 @@ database.once('connected', () => {
 				break;
 			case '3':
 				model = messageModel;
+				break;
+			case '4':
+				model = courseModel;
+				break;
+			case '5':
+				model = videoModel;
 				break;
 			default:
 				console.log('Wrong option.')
